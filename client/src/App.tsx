@@ -8,8 +8,7 @@ import Home from "./pages/Home";
 
 function Router() {
   return (
-    // O segredo está aqui: dizemos ao wouter que a nossa "raiz" é /lamaisonspa
-    <WouterRouter base="/lamaisonspa">
+    <WouterRouter> 
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/404" component={NotFound} />

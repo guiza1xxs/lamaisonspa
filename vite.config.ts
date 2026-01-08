@@ -1,45 +1,42 @@
 import { jsxLocPlugin } from "@builder.io/vite-plugin-jsx-loc";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
-import fs from "node:fs";
 import path from "path";
 import { defineConfig } from "vite";
 import { vitePluginManusRuntime } from "vite-plugin-manus-runtime";
 
-const plugins = [react(), tailwindcss(), jsxLocPlugin(), vitePluginManusRuntime()];
-
 export default defineConfig({
-  base: "/",
-  plugins,
+  // Garante que os assets sejam buscados na raiz do domínio
+  base: "/", 
+  
+  // O root indica onde está o index.html
+  root: path.resolve(__dirname, "client"),
+  
+  plugins: [
+    react(), 
+    tailwindcss(), 
+    jsxLocPlugin(), 
+    vitePluginManusRuntime()
+  ],
+  
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@shared": path.resolve(import.meta.dirname, "shared"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+      // Como o root já é a pasta 'client', o '@' deve apontar para 'src' diretamente
+      "@": path.resolve(__dirname, "client/src"),
+      "@shared": path.resolve(__dirname, "shared"),
+      "@assets": path.resolve(__dirname, "attached_assets"),
     },
   },
-  envDir: path.resolve(import.meta.dirname),
-  root: path.resolve(import.meta.dirname, "client"),
+  
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist"),
+    // O dist deve ficar na raiz do projeto, fora da pasta client
+    outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
   },
+  
   server: {
     port: 3000,
-    strictPort: false, // Will find next available port if 3000 is busy
     host: true,
-    allowedHosts: [
-      ".manuspre.computer",
-      ".manus.computer",
-      ".manus-asia.computer",
-      ".manuscomputer.ai",
-      ".manusvm.computer",
-      "localhost",
-      "127.0.0.1",
-    ],
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
+    allowedHosts: ["all"], // Simplificado para evitar bloqueios de host
   },
 });
