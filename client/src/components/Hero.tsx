@@ -9,7 +9,6 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
       {/* Background Image with STRONGER Overlay */}
       <div className="absolute inset-0 z-0">
-        {/* Aumentamos a opacidade do preto (bg-black/40) para o texto branco ler melhor */}
         <div className="absolute inset-0 bg-black/40 z-10" />
         <img 
           src="images/backgroundfoto.jpg" 
@@ -24,10 +23,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          // Ajustamos o padding top (pt-0 md:pt-0) para subir o conteúdo no mobile
           className="max-w-4xl mx-auto flex flex-col items-center justify-center -mt-20 md:mt-0"
         >
-          {/* LOGO - Tamanho ajustado para não empurrar tudo pra baixo */}
           <motion.img 
             src="images/logo.png" 
             alt="La Maison SPA Logo"
@@ -37,12 +34,10 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.3 }}
           />
 
-          {/* TITULO - Sombra adicionada para destacar da foto */}
           <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-4 italic leading-tight drop-shadow-md">
             <span>{t('hero_title')}</span>
           </h1>
           
-          {/* SUBTITULO - Texto em branco com opacidade para elegância */}
           <p className="font-sans font-light text-base md:text-xl text-white/90 mb-8 max-w-2xl mx-auto tracking-wide drop-shadow-sm">
             <span>{t('hero_subtitle')}</span>
           </p>
@@ -63,23 +58,28 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* INDICADOR DE SCROLL - Garantindo que apareça acima do fundo da tela */}
+      {/* INDICADOR DE SCROLL - AJUSTADO */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+        // Diminuímos o 'bottom' de 10 para 16 ou 20 para aproximar do botão
+        className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20"
       >
-        <div className="w-[1px] h-14 bg-white/30 mx-auto overflow-hidden">
-          <motion.div 
-            animate={{ y: [-56, 56] }}
-            transition={{ 
-              repeat: Infinity, 
-              duration: 2, 
-              ease: "easeInOut" 
-            }}
-            className="w-full h-full bg-white"
-          />
+        <div className="flex flex-col items-center gap-2">
+          {/* Aumentamos a altura (h-24) para o risco ficar bem longo e elegante */}
+          <div className="w-[1px] h-24 bg-white/20 relative overflow-hidden">
+            <motion.div 
+              // Ajustamos o deslocamento para condizer com a nova altura de 96px (h-24)
+              animate={{ y: [-96, 96] }}
+              transition={{ 
+                repeat: Infinity, 
+                duration: 2.5, 
+                ease: "easeInOut" 
+              }}
+              className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-white to-transparent"
+            />
+          </div>
         </div>
       </motion.div>
     </section>
