@@ -6,43 +6,44 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    // Mudamos para h-screen para garantir que nada passe do limite da tela inicial
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-white">
-      {/* Background Image with Overlay */}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Background Image with STRONGER Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-white/30 z-10" />
+        {/* Aumentamos a opacidade do preto (bg-black/40) para o texto branco ler melhor */}
+        <div className="absolute inset-0 bg-black/40 z-10" />
         <img 
           src="images/backgroundfoto.jpg" 
           alt={t('hero_img_alt')} 
-          className="w-full h-full object-cover opacity-90"
+          className="w-full h-full object-cover opacity-80"
           loading="eager"
         />
       </div>
         
       <div className="container relative z-20 px-4 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="max-w-4xl mx-auto flex flex-col items-center justify-center"
+          // Ajustamos o padding top (pt-0 md:pt-0) para subir o conteúdo no mobile
+          className="max-w-4xl mx-auto flex flex-col items-center justify-center -mt-20 md:mt-0"
         >
-          {/* LOGO - Reduzi um pouco o tamanho e a margem inferior (mb-4) */}
+          {/* LOGO - Tamanho ajustado para não empurrar tudo pra baixo */}
           <motion.img 
             src="images/logo.png" 
             alt="La Maison SPA Logo"
-            className="w-32 md:w-48 lg:w-56 mb-4 drop-shadow-sm" 
+            className="w-28 md:w-48 lg:w-56 mb-6 drop-shadow-2xl" 
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           />
 
-          {/* TITULO - Diminuímos um pouco o tamanho no desktop e a margem (mb-4) */}
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-wine mb-4 italic leading-tight">
+          {/* TITULO - Sombra adicionada para destacar da foto */}
+          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-white mb-4 italic leading-tight drop-shadow-md">
             <span>{t('hero_title')}</span>
           </h1>
           
-          {/* SUBTITULO - Margem reduzida (mb-8) */}
-          <p className="font-sans font-light text-base md:text-xl text-black mb-8 max-w-2xl mx-auto tracking-wide">
+          {/* SUBTITULO - Texto em branco com opacidade para elegância */}
+          <p className="font-sans font-light text-base md:text-xl text-white/90 mb-8 max-w-2xl mx-auto tracking-wide drop-shadow-sm">
             <span>{t('hero_subtitle')}</span>
           </p>
 
@@ -50,10 +51,9 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {/* BOTÃO - Padding reduzido (py-6) para ganhar espaço vertical */}
             <Button 
               asChild 
-              className="bg-wine hover:bg-wine/90 text-white text-base md:text-lg px-8 py-6 rounded-none uppercase tracking-widest font-normal transition-all duration-500 shadow-lg hover:shadow-xl"
+              className="bg-wine hover:bg-wine/90 text-white text-sm md:text-lg px-8 py-7 rounded-none uppercase tracking-[0.2em] font-normal transition-all duration-500 shadow-2xl"
             >
               <a href="https://wa.me/351928209613" target="_blank" rel="noopener noreferrer">
                 <span>{t('hero_cta')}</span>
@@ -63,23 +63,22 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* INDICADOR DE SCROLL (O risquinho que piscava) */}
-      {/* Colocamos bottom-6 para garantir que ele apareça mesmo em telas menores */}
+      {/* INDICADOR DE SCROLL - Garantindo que apareça acima do fundo da tela */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20"
       >
-        <div className="w-[1px] h-12 bg-wine/30 mx-auto overflow-hidden">
+        <div className="w-[1px] h-14 bg-white/30 mx-auto overflow-hidden">
           <motion.div 
-            animate={{ y: [-48, 48] }} // Animação do risquinho de cima para baixo
+            animate={{ y: [-56, 56] }}
             transition={{ 
               repeat: Infinity, 
-              duration: 1.5, 
-              ease: "linear" 
+              duration: 2, 
+              ease: "easeInOut" 
             }}
-            className="w-full h-full bg-wine"
+            className="w-full h-full bg-white"
           />
         </div>
       </motion.div>

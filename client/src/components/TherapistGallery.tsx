@@ -3,9 +3,59 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { therapists } from "@/lib/therapists";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
+
+function TherapistImageSlider({ images, name }: { images: string | string[] | undefined, name: string }) {
+  const [emblaRef] = useEmblaCarousel(
+    { 
+      loop: true, 
+      duration: 30,
+      skipSnaps: false,
+      watchDrag: true // Garante que o arrasto manual funcione
+    }, 
+    [Autoplay({ delay: 3500, stopOnInteraction: false })]
+  );
+
+  const imagesArray = Array.isArray(images) ? images : typeof images === 'string' ? [images] : [];
+
+  if (imagesArray.length === 0) {
+    return (
+      <div className="w-full h-full bg-stone-100 flex items-center justify-center">
+        <span className="text-wine/30 font-serif italic text-sm">La Maison SPA</span>
+      </div>
+    );
+  }
+
+  return (
+    // Removi o z-index daqui para não conflitar com as camadas superiores do card
+    <div className="relative w-full h-full overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+      <div className="flex h-full">
+        {imagesArray.map((img, index) => (
+          <div className="flex-[0_0_100%] min-w-0 h-full select-none" key={`${name}-img-${index}`}>
+            <img 
+              src={img} 
+              alt={`${name} - ${index + 1}`}
+              className="w-full h-full object-cover pointer-events-none" 
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Bolinhas - z-20 para ficar acima de tudo */}
+      {imagesArray.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+          {imagesArray.map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 rounded-full bg-white/60 shadow-sm" />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export default function TherapistGallery() {
-  // Pegamos 't' para traduzir textos e 'i18n' para checar o idioma atual
   const { t, i18n } = useTranslation();
 
   return (
@@ -24,7 +74,7 @@ export default function TherapistGallery() {
           <div className="w-24 h-[1px] bg-wine mx-auto mt-6"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-8 lg:gap-12">
           {therapists.map((therapist, index) => (
             <motion.div
               key={index}
@@ -35,28 +85,29 @@ export default function TherapistGallery() {
             >
               <Card className="border-none shadow-none bg-transparent group overflow-hidden rounded-none">
                 <CardContent className="p-0 relative aspect-[3/4] overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                  <img 
-                    src={therapist.image} 
-                    alt={therapist.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-black/70 to-transparent">
+                  
+                  {/* SLIDER - Agora ele é a base principal */}
+                  <TherapistImageSlider images={therapist.images} name={therapist.name} />
+                  
+                  {/* OVERLAY - O segredo: usei 'pointer-events-none'. 
+                      Assim o visual escuro aparece, mas o toque "atravessa" ele e chega no carrossel. */}
+                  <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+                  
+                  {/* INFORMAÇÕES - Também com pointer-events-none para não bloquear o toque lateral */}
+                  <div className="absolute bottom-0 left-0 w-full p-6 z-20 bg-gradient-to-t from-black/80 to-transparent pointer-events-none">
                     <h3 className="font-serif text-3xl text-white italic">{therapist.name}</h3>
                     <p className="font-sans text-white/90 text-sm font-light uppercase tracking-wider mt-1">{t('location_lisbon')}</p>
                   </div>
                 </CardContent>
+                
                 <CardFooter className="p-0 mt-4">
                   <Button 
                     asChild 
                     variant="outline" 
-                    className="w-full border-wine text-wine hover:bg-wine hover:text-white rounded-none py-6 uppercase tracking-widest font-light transition-all duration-300"
+                    className="w-full border-wine text-wine hover:bg-wine hover:text-white rounded-none py-6 uppercase tracking-widest font-light transition-all duration-300 shadow-sm"
                   >
                     <a 
                       href={`https://wa.me/351928209613?text=${
-                        // LÓGICA DE ATENDIMENTO: 
-                        // Se começar com 'pt', envia em português. Senão, força o envio em Inglês.
                         i18n.language.startsWith('pt') 
                           ? t('wa_message', { lng: 'pt' }) 
                           : t('wa_message', { lng: 'en' })
