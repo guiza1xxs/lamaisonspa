@@ -5,10 +5,10 @@ export default function AboutSpa() {
   const { t } = useTranslation(); // 2. Inicializar
 
   const spaImages = [
-    "/images/IMG_5454-Web-Fill.jpg",
-    "/images/IMG_5492-Web-Fill.jpg",
-    "/images/IMG_5482-Web-Fill.jpg",
-    "/images/IMG_5500-Web-Fill.jpg"
+    "images/IMG_5454-Web-Fill.jpg",
+    "images/IMG_5492-Web-Fill.jpg",
+    "images/IMG_5482-Web-Fill.jpg",
+    "images/IMG_5500-Web-Fill.jpg"
   ];
 
   return (

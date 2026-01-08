@@ -12,7 +12,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-white/30 z-10" />
         <img 
-          src="/images/backgroundfoto.jpg" 
+          src="images/backgroundfoto.jpg" 
           alt={t('hero_img_alt')} 
           className="w-full h-full object-cover opacity-90"
           loading="eager"
@@ -28,7 +28,7 @@ export default function Hero() {
         >
           {/* LOGO - Reduzi um pouco o tamanho e a margem inferior (mb-4) */}
           <motion.img 
-            src="/images/logo.png" 
+            src="images/logo.png" 
             alt="La Maison SPA Logo"
             className="w-32 md:w-48 lg:w-56 mb-4 drop-shadow-sm" 
             initial={{ opacity: 0, scale: 0.9 }}
