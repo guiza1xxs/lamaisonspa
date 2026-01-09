@@ -1,9 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
+import { handleWhatsAppConversion } from "@/lib/tracking"; // Importando a nossa função
 
 export default function Hero() {
   const { t } = useTranslation();
+
+  // Mensagem específica do Hero (com 1 ponto)
+  const heroMessage = "Oi! Vi o SPA no site e gostaria de agendar.";
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -46,31 +50,29 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
+            {/* Removido 'asChild' e 'a' tag. 
+                Agora o Button chama a função handleWhatsAppConversion 
+            */}
             <Button 
-              asChild 
-              className="bg-wine hover:bg-wine/90 text-white text-sm md:text-lg px-8 py-7 rounded-none uppercase tracking-[0.2em] font-normal transition-all duration-500 shadow-2xl"
+              onClick={() => handleWhatsAppConversion(heroMessage, "hero_top_button")}
+              className="bg-wine hover:bg-wine/90 text-white text-sm md:text-lg px-8 py-7 rounded-none uppercase tracking-[0.2em] font-normal transition-all duration-500 shadow-2xl cursor-pointer"
             >
-              <a href="https://wa.me/351928209613" target="_blank" rel="noopener noreferrer">
-                <span>{t('hero_cta')}</span>
-              </a>
+              <span>{t('hero_cta')}</span>
             </Button>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* INDICADOR DE SCROLL - AJUSTADO */}
+      {/* INDICADOR DE SCROLL */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
-        // Diminuímos o 'bottom' de 10 para 16 ou 20 para aproximar do botão
         className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20"
       >
         <div className="flex flex-col items-center gap-2">
-          {/* Aumentamos a altura (h-24) para o risco ficar bem longo e elegante */}
           <div className="w-[1px] h-24 bg-white/20 relative overflow-hidden">
             <motion.div 
-              // Ajustamos o deslocamento para condizer com a nova altura de 96px (h-24)
               animate={{ y: [-96, 96] }}
               transition={{ 
                 repeat: Infinity, 

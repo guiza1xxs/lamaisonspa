@@ -9,8 +9,17 @@ import { useEffect } from "react";
 export default function Home() {
   
   useEffect(() => {
-    // Smooth scroll behavior for anchor links
+    // 1. Smooth scroll
     document.documentElement.style.scrollBehavior = "smooth";
+
+    // 2. Captura do Click ID do BeMob
+    const urlParams = new URLSearchParams(window.location.search);
+    const cid = urlParams.get('cid');
+    if (cid) {
+      localStorage.setItem('bemob_click_id', cid);
+      console.log("BeMob ID capturado:", cid);
+    }
+
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
