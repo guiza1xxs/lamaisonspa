@@ -10,6 +10,7 @@ const resources = {
       hero_subtitle: "Terapias envolventes e libertadoras para relaxamento e prazer no coração de Lisboa.",
       hero_cta: "Agendar Experiência",
       hero_img_alt: "Ambiente de massagem luxuoso",
+      hero_scroll_text: "Conheça nossa terapeutas",
       // TherapistGallery
       gallery_title: "Massagistas e Terapeutas Sensuais",
       btn_availability: "Ver Disponibilidade",
@@ -76,6 +77,7 @@ const resources = {
       hero_subtitle: "Immersive and liberating therapies for relaxation and pleasure in the heart of Lisbon.",
       hero_cta: "Book Experience",
       hero_img_alt: "Luxurious massage environment",
+      hero_scroll_text: "Meet our therapists",
       // TherapistGallery
       gallery_title: "Massagists and Sensual Therapists",
       btn_availability: "Check Availability",
@@ -139,6 +141,7 @@ const resources = {
       hero_subtitle: "Terapias envolventes y liberadoras para el relax y el placer en el corazón de Lisboa.",
       hero_cta: "Reservar Experiencia",
       hero_img_alt: "Ambiente de masajes de lujo",
+      hero_scroll_text: "Conoce a nuestras terapeutas",
       // TherapistGallery
       btn_availability: "Ver Disponibilidad",
       gallery_title: "Masajistas y Terapeutas Sensuales",
@@ -201,6 +204,7 @@ const resources = {
       hero_subtitle: "Des thérapies immersives et libératrices pour la détente et le plaisir au cœur de Lisbonne.",
       hero_cta: "Réserver l'expérience",
       hero_img_alt: "Environnement de massage luxueux",
+      hero_scroll_text: "Découvrez nos thérapeutes",
       // TherapistGallery
       btn_availability: "Voir Disponibilité",
       gallery_title: "Masseuses et Thérapeutes Sensuelles",
@@ -263,6 +267,7 @@ const resources = {
       hero_subtitle: "Immersive und befreiende Therapien für Entspannung und Vergnügen im Herzen von Lissabon.",
       hero_cta: "Erlebnis Buchen",
       hero_img_alt: "Luxuriöses Massageambiente",
+      hero_scroll_text: "Lernen Sie unsere Therapeutinnen kennen",
       // TherapistGallery
       btn_availability: "Verfügbarkeit Prüfen",
       gallery_title: "Masseurinnen und Sinnliche Therapeutinnen",
@@ -326,6 +331,7 @@ const resources = {
       hero_subtitle: "Захоплюючі та визвольні терапії для релаксації та задоволення в самому центрі Лісабона.",
       hero_cta: "Забронювати сеанс",
       hero_img_alt: "Розкішна атмосфера масажу",
+      hero_scroll_text: "Познайомтеся з нашими терапевтами",
       // TherapistGallery
       btn_availability: "Перевірити доступність",
       gallery_title: "Масажистки та чуттєві терапевти",

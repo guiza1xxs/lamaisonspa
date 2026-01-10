@@ -1,10 +1,10 @@
 export const locations = [
-  {
+  /*{
     name: "Campo Grande",
     address: "Rua Afonso Lopes Vieira 56B, 1700-015 Campo Grande",
     phone: "+351913741785",
     displayPhone: "+351 913 741 785"
-  },
+  },*/
   {
     name: "Alameda",
     address: "Rua Barão de Sabrosa 134A, 1900-094 Penha de França",

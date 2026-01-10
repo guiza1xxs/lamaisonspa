@@ -1,13 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { handleWhatsAppConversion } from "@/lib/tracking"; // Importando a nossa função
+import { ChevronDown } from "lucide-react"; 
+import { handleWhatsAppConversion } from "@/lib/tracking";
 
 export default function Hero() {
   const { t } = useTranslation();
 
-  // Mensagem específica do Hero (com 1 ponto)
-  const heroMessage = "Oi! Vi o SPA no site e gostaria de agendar.";
+  const heroMessage = "Quero mais informações!";
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
@@ -50,9 +50,6 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            {/* Removido 'asChild' e 'a' tag. 
-                Agora o Button chama a função handleWhatsAppConversion 
-            */}
             <Button 
               onClick={() => handleWhatsAppConversion(heroMessage, "hero_top_button")}
               className="bg-wine hover:bg-wine/90 text-white text-sm md:text-lg px-8 py-7 rounded-none uppercase tracking-[0.2em] font-normal transition-all duration-500 shadow-2xl cursor-pointer"
@@ -63,26 +60,30 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* INDICADOR DE SCROLL */}
+      {/* INDICADOR DE SCROLL - FONTE AUMENTADA E CENTRALIZADA */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1 }}
-        className="absolute bottom-16 left-1/2 transform -translate-x-1/2 z-20"
+        transition={{ delay: 2, duration: 1 }}
+        className="absolute bottom-6 left-0 right-0 mx-auto z-20 flex flex-col items-center cursor-pointer w-full px-4"
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-[1px] h-24 bg-white/20 relative overflow-hidden">
-            <motion.div 
-              animate={{ y: [-96, 96] }}
-              transition={{ 
-                repeat: Infinity, 
-                duration: 2.5, 
-                ease: "easeInOut" 
-              }}
-              className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-white to-transparent"
-            />
-          </div>
-        </div>
+        <span className="text-white/90 text-[13px] md:text-sm uppercase tracking-[0.1em] md:tracking-[0.2em] mb-2 font-medium whitespace-nowrap text-center block w-full drop-shadow-lg">
+          {t('hero_scroll_text')}
+        </span>
+        
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ 
+            repeat: Infinity, 
+            duration: 1.5, 
+            ease: "easeInOut" 
+          }}
+          className="flex flex-col items-center"
+        >
+          <ChevronDown className="text-white/60 w-6 h-6 -mb-3" />
+          <ChevronDown className="text-white w-8 h-8" />
+        </motion.div>
       </motion.div>
     </section>
   );

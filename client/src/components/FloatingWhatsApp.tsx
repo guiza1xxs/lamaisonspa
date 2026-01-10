@@ -4,7 +4,7 @@ import { handleWhatsAppConversion } from "@/lib/tracking"; // Importando a funç
 
 export default function FloatingWhatsApp() {
   // Mensagem específica do Widget Flutuante (com 2 pontos)
-  const message = "Oi! Vi o SPA no site e gostaria de agendar..";
+  const message = "Quero mais informações!.";
 
   return (
     <motion.button
