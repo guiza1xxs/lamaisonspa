@@ -10,7 +10,7 @@ const resources = {
       hero_subtitle: "Terapias envolventes e libertadoras para relaxamento e prazer no coração de Lisboa.",
       hero_cta: "Agendar Experiência",
       hero_img_alt: "Ambiente de massagem luxuoso",
-      hero_scroll_text: "Conheça nossa terapeutas",
+      hero_scroll_text: "Conheça nossas terapeutas",
       // TherapistGallery
       gallery_title: "Massagistas e Terapeutas Sensuais",
       btn_availability: "Ver Disponibilidade",
