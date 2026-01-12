@@ -10,8 +10,15 @@ export default function Hero() {
   const heroMessage = "Quero mais informações!";
 
   return (
-    /* Ajuste para Dynamic Viewport Height (dvh) */
     <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-black">
+      
+      {/* ANNOUNCEMENT BAR - Filtro de Qualidade */}
+     <div className="fixed top-0 left-0 w-full z-[100] bg-wine/90 backdrop-blur-md py-2.5 px-4 shadow-xl">
+      <p className="text-white text-center text-[10px] md:text-[11px] uppercase tracking-[0.12em] font-semibold leading-tight drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
+       {t('hero_disclaimer')}
+     </p>
+    </div>
+
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/40 z-10" />
@@ -28,8 +35,8 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          /* Subimos o conteúdo principal no mobile para não amontoar com as setas */
-          className="max-w-4xl mx-auto flex flex-col items-center justify-center -mt-32 md:mt-0"
+          /* Ajustado para dar espaço à barra superior no mobile */
+          className="max-w-4xl mx-auto flex flex-col items-center justify-center -mt-24 md:mt-0"
         >
           <motion.img 
             src="images/logo.png" 
@@ -62,12 +69,11 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* INDICADOR DE SCROLL POSICIONADO MAIS ALTO NO MOBILE */}
+      {/* INDICADOR DE SCROLL */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2, duration: 1 }}
-        /* bottom-24 para mobile para fugir das barras do iPhone, bottom-10 para desktop */
         className="absolute bottom-24 md:bottom-10 left-0 right-0 mx-auto z-20 flex flex-col items-center cursor-pointer w-full px-4"
         onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
       >

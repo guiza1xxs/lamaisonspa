@@ -11,6 +11,7 @@ const resources = {
       hero_cta: "Agendar Experiência",
       hero_img_alt: "Ambiente de massagem luxuoso",
       hero_scroll_text: "Conheça nossas terapeutas",
+      hero_disclaimer: "Massagens estritamente profissionais. Não realizamos serviços de cariz sexual.",
       // TherapistGallery
       gallery_title: "Massagistas e Terapeutas Sensuais",
       btn_availability: "Ver Disponibilidade",
@@ -78,6 +79,7 @@ const resources = {
       hero_cta: "Book Experience",
       hero_img_alt: "Luxurious massage environment",
       hero_scroll_text: "Meet our therapists",
+      hero_disclaimer: "Strictly professional massages. We do not provide sexual services.",
       // TherapistGallery
       gallery_title: "Massagists and Sensual Therapists",
       btn_availability: "Check Availability",
@@ -142,6 +144,7 @@ const resources = {
       hero_cta: "Reservar Experiencia",
       hero_img_alt: "Ambiente de masajes de lujo",
       hero_scroll_text: "Conoce a nuestras terapeutas",
+      hero_disclaimer: "Masajes estrictamente profesionales. No realizamos servicios de índole sexual.",
       // TherapistGallery
       btn_availability: "Ver Disponibilidad",
       gallery_title: "Masajistas y Terapeutas Sensuales",
@@ -205,6 +208,7 @@ const resources = {
       hero_cta: "Réserver l'expérience",
       hero_img_alt: "Environnement de massage luxueux",
       hero_scroll_text: "Découvrez nos thérapeutes",
+      hero_disclaimer: "Massages strictement professionnels. Nous ne proposons aucun service sexuel.",
       // TherapistGallery
       btn_availability: "Voir Disponibilité",
       gallery_title: "Masseuses et Thérapeutes Sensuelles",
@@ -268,6 +272,7 @@ const resources = {
       hero_cta: "Erlebnis Buchen",
       hero_img_alt: "Luxuriöses Massageambiente",
       hero_scroll_text: "Lernen Sie unsere Therapeutinnen kennen",
+      hero_disclaimer: "Ausschließlich professionelle Massagen. Wir bieten keine sexuellen Dienstleistungen an.",
       // TherapistGallery
       btn_availability: "Verfügbarkeit Prüfen",
       gallery_title: "Masseurinnen und Sinnliche Therapeutinnen",
@@ -332,6 +337,7 @@ const resources = {
       hero_cta: "Забронювати сеанс",
       hero_img_alt: "Розкішна атмосфера масажу",
       hero_scroll_text: "Познайомтеся з нашими терапевтами",
+      hero_disclaimer: "Виключно професійний масаж. Ми не надаємо послуг сексуального характеру.",
       // TherapistGallery
       btn_availability: "Перевірити доступність",
       gallery_title: "Масажистки та чуттєві терапевти",
