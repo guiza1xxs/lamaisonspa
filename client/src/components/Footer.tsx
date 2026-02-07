@@ -1,9 +1,9 @@
 import { locations } from "@/lib/locations";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next"; // 1. Importar
+import { useTranslation } from "react-i18next";
 
 export default function Footer() {
-  const { t } = useTranslation(); // 2. Inicializar
+  const { t } = useTranslation();
 
   return (
     <footer className="bg-brown text-white py-20 border-t border-wine/30">
@@ -12,7 +12,15 @@ export default function Footer() {
           
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <h3 className="font-serif text-3xl italic mb-6 text-wine">La Maison SPA</h3>
+            {/* SEO: Link no nome da marca ajuda a consolidar a autoridade do domínio */}
+            <a 
+              href="http://massagememlisboa.pt/" 
+              className="inline-block hover:opacity-80 transition-opacity"
+              title="La Maison SPA - Massagens em Lisboa"
+            >
+              <h3 className="font-serif text-3xl italic mb-6 text-wine">La Maison SPA</h3>
+            </a>
+            
             <p className="font-sans font-light text-white/70 text-sm leading-relaxed mb-6">
               <span>{t('footer_desc')}</span>
             </p>
@@ -48,7 +56,17 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 mt-16 pt-8 text-center font-sans font-light text-xs text-white/40">
-          <p>&copy; {new Date().getFullYear()} La Maison SPA. <span>{t('footer_rights')}</span></p>
+          <p>
+            &copy; {new Date().getFullYear()}{" "}
+            {/* Link adicional no copyright para reforçar o rastreio do robô do Google */}
+            <a 
+              href="http://massagememlisboa.pt/" 
+              className="hover:text-wine transition-colors"
+            >
+              La Maison SPA
+            </a>
+            . <span>{t('footer_rights')}</span>
+          </p>
         </div>
       </div>
     </footer>

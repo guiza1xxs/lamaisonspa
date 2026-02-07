@@ -17,6 +17,12 @@ const resources = {
       btn_availability: "Ver Disponibilidade",
       wa_message: "Olá, gostaria de saber a disponibilidade da",
       location_lisbon: "Lisboa, Portugal",
+      btn_load_more: "Ver Mais Terapeutas", location_label: "Localização",
+      //CARD
+      label_nationality: "Nacionalidade",
+      label_age: "Idade",
+      label_height: "Altura",
+      label_languages: "Idiomas",
       // TherapyMenu
       menu_title: "Menu de Terapias",
       "Tantra e Sensuais": "Tantra e Sensuais",
@@ -85,6 +91,12 @@ const resources = {
       btn_availability: "Check Availability",
       wa_message: "Hello, I would like to check the availability for",
       location_lisbon: "Lisbon, Portugal",     
+      btn_load_more: "View More Therapists", location_label: "Location",
+      //CARD
+      label_nationality: "Nationality",
+      label_age: "Age",
+      label_height: "Height",
+      label_languages: "Languages",
       // TherapyMenu
       menu_title: "Therapy Menu",
       "Tantra e Sensuais": "Tantra & Sensual",
@@ -149,6 +161,12 @@ const resources = {
       btn_availability: "Ver Disponibilidad",
       gallery_title: "Masajistas y Terapeutas Sensuales",
       location_lisbon: "Lisboa, Portugal",
+      btn_load_more: "Ver más terapeutas", location_label: "Ubicación",
+      //CARD
+      label_nationality: "Nacionalidad",
+      label_age: "Edad",
+      label_height: "Altura",
+      label_languages: "Idiomas",
       // TherapyMenu
       menu_title: "Menú de Terapias",
       "Tantra e Sensuais": "Tantra y Sensuales",
@@ -213,6 +231,12 @@ const resources = {
       btn_availability: "Voir Disponibilité",
       gallery_title: "Masseuses et Thérapeutes Sensuelles",
       location_lisbon: "Lisbonne, Portugal",
+      btn_load_more: "Voir plus de thérapeutes", location_label: "Emplacement",
+      //CARD
+      label_nationality: "Nationalité",
+      label_age: "Âge",
+      label_height: "Taille",
+      label_languages: "Langues",
       // TherapyMenu
       menu_title: "Menu des Thérapies",
       "Tantra e Sensuais": "Tantra et Sensuel",
@@ -277,6 +301,12 @@ const resources = {
       btn_availability: "Verfügbarkeit Prüfen",
       gallery_title: "Masseurinnen und Sinnliche Therapeutinnen",
       location_lisbon: "Lissabon, Portugal",  
+      btn_load_more: "Weitere Therapeuten anzeigen", location_label: "Standort",
+      //CARD
+      label_nationality: "Nationalität",
+      label_age: "Alter",
+      label_height: "Größe",
+      label_languages: "Sprachen", 
       // TherapyMenu
       menu_title: "Therapie-Menü",
       "Tantra e Sensuais": "Tantra & Sinnliche Massagen",
@@ -342,6 +372,12 @@ const resources = {
       btn_availability: "Перевірити доступність",
       gallery_title: "Масажистки та чуттєві терапевти",
       location_lisbon: "Лісабон, Португалія",
+      btn_load_more: "Переглянути більше терапевтів", location_label: "Розташування",
+      //CARD
+      label_nationality: "Національність",
+      label_age: "Вік",
+      label_height: "Зріст",
+      label_languages: "Мови",
       // TherapyMenu
       menu_title: "Меню терапій",
       "Tantra e Sensuais": "Тантра та чуттєві масажі",
