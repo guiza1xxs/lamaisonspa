@@ -603,7 +603,6 @@ export const therapists = [
     images: [
       "images/Ana_capa.jpg",
       "images/Ana_01.jpg",
-      "images/Ravena-3-scaled.jpeg",
       "images/Ana_03.jpg",
       "images/Ana_04.jpg"
     ],
