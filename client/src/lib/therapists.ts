@@ -127,7 +127,7 @@ export const therapists = [
     ],
     location: "Marquês de Pombal"
   },*/
-  {
+  /*{
     name: "Clara",
     age: "22",
     nationality: "Brasileira",
@@ -142,7 +142,7 @@ export const therapists = [
       "images/Clara_09.jpeg"
     ],
     location: "Campo Grande"
-  },
+  },*/
   /*{
     name: "Chris",
     age: "30",
@@ -500,7 +500,7 @@ export const therapists = [
     ],
     location: "Marquês de Pombal"
   },
-  {
+  /*{
     name: "Suellen",
     age: "32",
     nationality: "Brasileira",
@@ -515,7 +515,7 @@ export const therapists = [
       "images/Suellen_04.jpeg"
     ],
     location: "Alameda"
-  },
+  },*/
   {
     name: "Isa",
     age: "20",
