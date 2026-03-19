@@ -1,5 +1,5 @@
 export const therapists = [
-  {
+  /*{
     name: "Emily",
     age: "20",
     nationality: "Brasileira",
@@ -14,7 +14,7 @@ export const therapists = [
       "images/Emily_05-640x640.jpg"
     ],
     location: "Marquês de Pombal"
-  },
+  },*/
   {
     name: "​Daisy",
     age: "18",
@@ -111,7 +111,7 @@ export const therapists = [
     ],
     location: "Marquês de Pombal"
   },
-  {
+  /*{
     name: "Désirée",
     age: "25",
     nationality: "Brasileira",
@@ -126,7 +126,7 @@ export const therapists = [
       "images/capa.jpeg"
     ],
     location: "Marquês de Pombal"
-  },
+  },*/
   {
     name: "Clara",
     age: "22",
@@ -143,7 +143,7 @@ export const therapists = [
     ],
     location: "Campo Grande"
   },
-  {
+  /*{
     name: "Chris",
     age: "30",
     nationality: "Brasileira",
@@ -158,7 +158,7 @@ export const therapists = [
       "images/Chris_02.jpg"
     ],
     location: "Marquês de Pombal"
-  },
+  },*/
   {
     name: "Ada",
     age: "27",
@@ -223,7 +223,7 @@ export const therapists = [
     ],
     location: "Campo Grande"
   },
-  {
+  /*{
     name: "Mel",
     age: "25",
     nationality: "Brasileira",
@@ -238,7 +238,7 @@ export const therapists = [
       "images/Mel_03.jpg"
     ],
     location: "Alameda"
-  },
+  },*/
   {
     name: "Cecília",
     age: "25",
@@ -286,7 +286,7 @@ export const therapists = [
     ],
     location: "Campo Grande"
   },
-  {
+  /*{
     name: "Alice",
     age: "20",
     nationality: "Brasileira",
@@ -301,7 +301,7 @@ export const therapists = [
       "images/Alice_2026-6.jpeg"
     ],
     location: "Marquês de Pombal"
-  },
+  },*/
   {
     name: "Dalya",
     age: "21",
@@ -318,7 +318,7 @@ export const therapists = [
     ],
     location: "Marquês de Pombal"
   },
-  {
+  /*{
     name: "Flora",
     age: "21",
     nationality: "Brasileira",
@@ -332,8 +332,8 @@ export const therapists = [
       "images/Flora_05.jpg"
     ],
     location: "Marquês de Pombal"
-  },
-  {
+  },*/
+  /*{
     name: "Luna",
     age: "23",
     nationality: "Brasileira",
@@ -347,8 +347,8 @@ export const therapists = [
       "images/Luna-5.jpeg"
     ],
     location: "Alameda"
-  },
-  {
+  },*/
+  /*{
     name: "Bruna",
     age: "30",
     nationality: "Brasileira",
@@ -361,8 +361,8 @@ export const therapists = [
       "images/08f3204d-58a1-4232-be04-1555102df70f-1.jpg"
     ],
     location: "Campo Grande"
-  },
-  {
+  },*/
+  /*{
     name: "Ravena",
     age: "18",
     nationality: "Brasileira",
@@ -377,7 +377,7 @@ export const therapists = [
       "images/Ravena-2-scaled.jpeg"
     ],
     location: "Campo Grande"
-  },
+  },*/
   {
     name: "Sofia",
     age: "22",
@@ -452,7 +452,7 @@ export const therapists = [
     ],
     location: "Marquês de Pombal"
   },
-  {
+  /*{
     name: "Babi",
     age: "30",
     nationality: "Brasileira",
@@ -467,7 +467,7 @@ export const therapists = [
       "images/Babi-1.jpeg"
     ],
     location: "Marquês de Pombal"
-  },
+  },*/
   {
     name: "Bia",
     age: "18",
@@ -578,7 +578,7 @@ export const therapists = [
     ],
     location: "Campo Grande"
   },
-   {
+   /*{
     name: "Aure",
     age: "20",
     nationality: "Brasileira",
@@ -593,7 +593,7 @@ export const therapists = [
       "images/Aure_03-1.jpeg"
     ],
     location: "Marquês de Pombal"
-  },
+  },*/
    {
     name: "Lana",
     age: "25",
